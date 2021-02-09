@@ -1,0 +1,32 @@
+.profile__edit {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+  margin-left: 18px;
+  margin-bottom: 9px;
+  align-self: end;
+  background-color: inherit;
+  background-image: url(../../../image/pencil.png);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.profile__edit:focus {
+  outline: none;
+}
+
+.profile__edit:hover {
+  opacity: .6;
+  transition: opacity .3s linear;
+}
+
+@media screen and (max-width: 700px) {
+  .profile__edit {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    margin-bottom: 7px;
+    background-size: 7.5px;
+  }
+}

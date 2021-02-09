@@ -1,0 +1,8 @@
+.cards-grid__item {
+  width: 282px;
+  height: 361px;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  font-size: 0;
+}

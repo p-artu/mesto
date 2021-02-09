@@ -1,0 +1,24 @@
+.cards-grid__icon {
+  margin-right: 30px;
+  width: 22px;
+  height: 19px;
+  border: none;
+  background-color: inherit;
+  background-image: url(../../../image/heart_empty.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px 19px;
+}
+
+.cards-grid__icon:focus {
+  outline: none;
+}
+
+.cards-grid__icon:hover {
+  opacity: .5;
+  transition: opacity .3s linear;
+}
+
+.cards-grid__icon:active {
+  background-image: url(../../../image/heart_full.png);
+}
