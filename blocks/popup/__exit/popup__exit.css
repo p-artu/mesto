@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   background-size: 58px;
   border: none;
+  cursor: pointer;
 }
 
 .popup__exit:focus {

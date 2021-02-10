@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="pages/index.css">
-  <title>Mesto</title>
+  <title>Место</title>
 </head>
 <body>
   <div class="page">
     <div class="popup">
       <div class="popup__container">
-        <button class="popup__exit"></button>
+        <button type="button" aria-label="Выход" class="popup__exit"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form">
-          <input placeholder="Имя" type="text" class="popup__input popup__input_name">
-          <input placeholder="О себе" type="text" class="popup__input popup__input_job">
+        <form name="form" class="popup__form">
+          <input name="name" placeholder="Имя" type="text" class="popup__input popup__input_theme_name">
+          <input name="job" placeholder="О себе" type="text" class="popup__input popup__input_theme_job">
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
       </div>
@@ -22,7 +22,6 @@
 
     <header class="header">
       <img class="header__logo" alt="Логотип" src="image/logo.png">
-      <div class="header__line"></div>
     </header>
 
     <main class="content">
@@ -30,53 +29,53 @@
         <div class="profile__avatar"></div>
         <div class="profile__heading">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__edit"></button>
+          <button type="button" aria-label="Данные профиля" class="profile__edit"></button>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <button class="profile__add"></button>
+        <button type="button" aria-label="Добавить фото" class="profile__add"></button>
       </section>
       <section class="cards">
         <ul class="cards-grid">
           <li class="cards-grid__item">
             <img src="image/karachaevsk.jpg" alt="Аватарка пользователя" class="cards-grid__image">
             <div class="cards-grid__info">
-              <p class="cards-grid__title">Карачаевск</p>
-              <button class="cards-grid__icon"></button>
+              <h3 class="cards-grid__title">Карачаевск</h3>
+              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
             </div>
           </li>
           <li class="cards-grid__item">
             <img src="image/dombai.jpg" alt="Горы Домбая" class="cards-grid__image">
             <div class="cards-grid__info">
-              <p class="cards-grid__title">Домбай</p>
-              <button class="cards-grid__icon"></button>
+              <h3 class="cards-grid__title">Домбай</h3>
+              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
             </div>
           </li>
           <li class="cards-grid__item">
             <img src="image/elbrus.jpg" alt="Гора Эльбрус" class="cards-grid__image">
             <div class="cards-grid__info">
-              <p class="cards-grid__title">Гора Эльбрус</p>
-              <button class="cards-grid__icon"></button>
+              <h3 class="cards-grid__title">Гора Эльбрус</h3>
+              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
             </div>
           </li>
           <li class="cards-grid__item">
             <img src="image/faroe_islands.jpg" alt="Горы на Фарерских островах" class="cards-grid__image">
             <div class="cards-grid__info">
-              <p class="cards-grid__title">Фарерские острова</p>
-              <button class="cards-grid__icon"></button>
+              <h3 class="cards-grid__title">Фарерские острова</h3>
+              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
             </div>
           </li>
           <li class="cards-grid__item">
-            <img src="image/yosemite_national_park.jpg" alt="Вершины Йосемитского национального парка" class="cards-grid__image cards-grid__image_bottom">
+            <img src="image/yosemite_national_park.jpg" alt="Вершины Йосемитского национального парка" class="cards-grid__image">
             <div class="cards-grid__info">
-              <p class="cards-grid__title">Йосемитский национальный парк</p>
-              <button class="cards-grid__icon"></button>
+              <h3 class="cards-grid__title">Йосемитский национальный парк</h3>
+              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
             </div>
           </li>
           <li class="cards-grid__item">
-            <img src="image/augstmatthorn.jpg" alt="Гора Аугстматторн" class="cards-grid__image cards-grid__image_bottom">
+            <img src="image/augstmatthorn.jpg" alt="Гора Аугстматторн" class="cards-grid__image">
             <div class="cards-grid__info">
-              <p class="cards-grid__title">Гора Аугстматторн</p>
-              <button class="cards-grid__icon"></button>
+              <h3 class="cards-grid__title">Гора Аугстматторн</h3>
+              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
             </div>
           </li>
         </ul>

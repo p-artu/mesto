@@ -10,6 +10,7 @@
   background-size: 10px;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .profile__edit:focus {
