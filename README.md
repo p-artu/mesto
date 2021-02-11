@@ -4,6 +4,7 @@
 
 [Ссылка на проект в GitHub Pages](https://p-artu.github.io/mesto/index.html)
 
+
 В проекте применялись следующие технологии:
 1. Методология БЭМ.
 2. Flexbox-вёрстка.
