@@ -5,8 +5,12 @@
 @import url(../blocks/page/page.css);
 
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_issue/popup_issue_image.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__image-container/popup__image-container.css);
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__image-caption/popup__image-caption.css);
 @import url(../blocks/popup/__exit/popup__exit.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__form/popup__form.css);
@@ -27,6 +31,7 @@
 @import url(../blocks/cards/cards.css);
 @import url(../blocks/cards-grid/cards-grid.css);
 @import url(../blocks/cards-grid/__item/cards-grid__item.css);
+@import url(../blocks/cards-grid/__trash/cards-grid__trash.css);
 @import url(../blocks/cards-grid/__image/cards-grid__image.css);
 @import url(../blocks/cards-grid/__info/cards-grid__info.css);
 @import url(../blocks/cards-grid/__title/cards-grid__title.css);

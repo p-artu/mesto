@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="page">
-    <div class="popup">
+    <div class="popup popup_issue_profile">
       <div class="popup__container">
         <button type="button" aria-label="Выход" class="popup__exit"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
@@ -18,6 +18,24 @@
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
       </div>
+    </div>
+    <div class="popup popup_issue_cards">
+      <div class="popup__container">
+        <button type="button" aria-label="Выход" class="popup__exit"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form name="form" class="popup__form">
+          <input name="title" placeholder="Название" type="text" class="popup__input popup__input_theme_title" value="">
+          <input name="link" placeholder="Ссылка на картинку" type="text" class="popup__input popup__input_theme_link" value="">
+          <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_issue_image">
+      <figure class="popup__image-container">
+        <img src="" alt="Твоя картинка не найдена" class="popup__image">
+        <button type="button" aria-label="Выход" class="popup__exit"></button>
+        <figcaption class="popup__image-caption"></figcaption>
+      </figure>
     </div>
 
     <header class="header">
@@ -36,48 +54,7 @@
       </section>
       <section class="cards">
         <ul class="cards-grid">
-          <li class="cards-grid__item">
-            <img src="image/karachaevsk.jpg" alt="Аватарка пользователя" class="cards-grid__image">
-            <div class="cards-grid__info">
-              <h2 class="cards-grid__title">Карачаевск</h2>
-              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
-            </div>
-          </li>
-          <li class="cards-grid__item">
-            <img src="image/dombai.jpg" alt="Горы Домбая" class="cards-grid__image">
-            <div class="cards-grid__info">
-              <h2 class="cards-grid__title">Домбай</h2>
-              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
-            </div>
-          </li>
-          <li class="cards-grid__item">
-            <img src="image/elbrus.jpg" alt="Гора Эльбрус" class="cards-grid__image">
-            <div class="cards-grid__info">
-              <h2 class="cards-grid__title">Гора Эльбрус</h2>
-              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
-            </div>
-          </li>
-          <li class="cards-grid__item">
-            <img src="image/faroe_islands.jpg" alt="Горы на Фарерских островах" class="cards-grid__image">
-            <div class="cards-grid__info">
-              <h2 class="cards-grid__title">Фарерские острова</h2>
-              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
-            </div>
-          </li>
-          <li class="cards-grid__item">
-            <img src="image/yosemite_national_park.jpg" alt="Вершины Йосемитского национального парка" class="cards-grid__image">
-            <div class="cards-grid__info">
-              <h2 class="cards-grid__title">Йосемитский национальный парк</h2>
-              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
-            </div>
-          </li>
-          <li class="cards-grid__item">
-            <img src="image/augstmatthorn.jpg" alt="Гора Аугстматторн" class="cards-grid__image">
-            <div class="cards-grid__info">
-              <h2 class="cards-grid__title">Гора Аугстматторн</h2>
-              <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
-            </div>
-          </li>
+
         </ul>
       </section>
     </main>
@@ -86,6 +63,16 @@
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
 
+    <template id="card">
+      <li class="cards-grid__item">
+        <button type="button" aria-label="Удалить" class="cards-grid__trash"></button>
+        <img src="" alt="Твоя картинка не найдена" class="cards-grid__image">
+        <div class="cards-grid__info">
+          <h2 class="cards-grid__title"></h2>
+          <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
+        </div>
+      </li>
+    </template>
     <script src="script.js"></script>
   </div>
 </body>

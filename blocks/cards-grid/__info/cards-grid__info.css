@@ -1,6 +1,7 @@
 .cards-grid__info {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
   margin: 25px 0;
 }
