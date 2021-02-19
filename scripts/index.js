@@ -22,7 +22,7 @@ function createCard(card) {
   const cardElement = cardTemplate.querySelector('.cards-grid__item').cloneNode(true);
   cardElement.querySelector('.cards-grid__image').src = card.link;
   cardElement.querySelector('.cards-grid__title').textContent = card.name;
-  cardsContainer.prepend(cardElement);
+  return cardElement
 }
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -43,10 +43,10 @@ function handleProfileFormSubmit(evt) {
 }
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
-  createCard({
+  cardsContainer.prepend(createCard({
     name: titleInput.value,
     link: linkInput.value
-  });
+  }));
   closePopup(popupCards);
   linkInput.value = '';
   titleInput.value = '';
@@ -72,7 +72,7 @@ function  clickCard(evt) {
   }
 }
 initialCards.forEach(function(item) {
-  createCard(item);
+  cardsContainer.prepend(createCard(item));
 });
 
 profileEditOpenButton.addEventListener('click', openPropfilePopup);
