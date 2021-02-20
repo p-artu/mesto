@@ -47,9 +47,8 @@ function handleCardFormSubmit(evt) {
     name: titleInput.value,
     link: linkInput.value
   }));
+  formCards.reset();
   closePopup(popupCards);
-  linkInput.value = '';
-  titleInput.value = '';
 }
 function  likeCard(element) {
   element.classList.toggle('cards-grid__icon_active');
@@ -72,7 +71,7 @@ function  clickCard(evt) {
   }
 }
 initialCards.forEach(function(item) {
-  cardsContainer.prepend(createCard(item));
+  cardsContainer.append(createCard(item));
 });
 
 profileEditOpenButton.addEventListener('click', openPropfilePopup);
