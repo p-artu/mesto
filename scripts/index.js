@@ -17,7 +17,6 @@ const cardsContainer = cards.querySelector('.cards-grid');
 const popupImage = document.querySelector('.popup_issue_image');
 const exitImage = popupImage.querySelector('.popup__exit');
 const cardTemplate = document.querySelector('#card').content;
-const overlay = Array.from(document.querySelectorAll('.popup'));
 
 function createCard(card) {
   const cardElement = cardTemplate.querySelector('.cards-grid__item').cloneNode(true);
@@ -25,11 +24,21 @@ function createCard(card) {
   cardElement.querySelector('.cards-grid__title').textContent = card.name;
   return cardElement
 }
+function createListener(popup) {
+  popup.addEventListener('click', closePopupOverlay);
+  document.addEventListener('keydown', closePopupEscape);
+}
+function deleteListener(popup) {
+  popup.removeEventListener('click', closePopupOverlay);
+  document.removeEventListener('keydown', closePopupEscape);
+}
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  createListener(popup);
 }
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  deleteListener(popup);
 }
 function openPropfilePopup() {
   nameInput.value = title.textContent;
@@ -39,6 +48,17 @@ function openPropfilePopup() {
 function closePopupOverlay(evt) {
   if (evt.target === evt.currentTarget) {
     closePopup(evt.target);
+  }
+}
+function closePopupEscape(evt) {
+  if (evt.key === 'Escape') {
+    if (evt.target === profileEditOpenButton) {
+      closePopup(popupProfile);
+    } else if (evt.target === cardAddOpenButton) {
+      closePopup(popupCards);
+    } else {
+      closePopup(popupImage);
+    }
   }
 }
 function handleProfileFormSubmit(evt) {
@@ -80,7 +100,6 @@ initialCards.forEach(function(item) {
   cardsContainer.append(createCard(item));
 });
 
-overlay.forEach(popup => popup.addEventListener('click', closePopupOverlay));
 profileEditOpenButton.addEventListener('click', openPropfilePopup);
 exitProfile.addEventListener('click', () => closePopup(popupProfile));
 cardAddOpenButton.addEventListener('click', () => openPopup(popupCards));
