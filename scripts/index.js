@@ -17,6 +17,7 @@ const cardsContainer = cards.querySelector('.cards-grid');
 const popupImage = document.querySelector('.popup_issue_image');
 const exitImage = popupImage.querySelector('.popup__exit');
 const cardTemplate = document.querySelector('#card').content;
+const overlay = Array.from(document.querySelectorAll('.popup'));
 
 function createCard(card) {
   const cardElement = cardTemplate.querySelector('.cards-grid__item').cloneNode(true);
@@ -34,6 +35,11 @@ function openPropfilePopup() {
   nameInput.value = title.textContent;
   jobInput.value = subtitle.textContent;
   openPopup(popupProfile);
+}
+function closePopupOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt.target);
+  }
 }
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -74,6 +80,7 @@ initialCards.forEach(function(item) {
   cardsContainer.append(createCard(item));
 });
 
+overlay.forEach(popup => popup.addEventListener('click', closePopupOverlay));
 profileEditOpenButton.addEventListener('click', openPropfilePopup);
 exitProfile.addEventListener('click', () => closePopup(popupProfile));
 cardAddOpenButton.addEventListener('click', () => openPopup(popupCards));
@@ -82,4 +89,5 @@ formProfile.addEventListener('submit', handleProfileFormSubmit);
 formCards.addEventListener('submit', handleCardFormSubmit);
 cards.addEventListener('click', clickCard);
 exitImage.addEventListener('click', () => closePopup(popupImage));
+
 
