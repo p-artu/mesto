@@ -1,0 +1,18 @@
+.popup__error {
+  top: 57px;
+  left: 36px;
+}
+
+.popup__error:nth-of-type(2n) {
+  top: 114px;
+  left: 36px;
+}
+
+@media screen and (max-width: 402px) {
+  .popup__error {
+    left: 22px;
+  }
+  .popup__error:nth-of-type(2n) {
+    left: 22px;
+  }
+}
