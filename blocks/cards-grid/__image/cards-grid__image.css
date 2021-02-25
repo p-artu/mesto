@@ -3,6 +3,7 @@
   width: 282px;
   height: 282px;
   object-fit: cover;
-  object-position: center;
+  object-position: bottom;
   cursor: pointer;
+  color: #000;
 }
