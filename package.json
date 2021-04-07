@@ -1,0 +1,31 @@
+{
+  "name": "mesto",
+  "version": "0.0.1",
+  "description": "Этот проект - интерактивная страница, на которой можно создать свой профиль, добавлять фотографии, удалять их, ставить лайки.",
+  "main": "index.js",
+  "scripts": {
+    "build": "rd /s /q dist && webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-artu/mesto.git"
+  },
+  "author": "Artur Padar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p-artu/mesto/issues"
+  },
+  "homepage": "https://github.com/p-artu/mesto#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.31.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "core-js": "^3.10.1"
+  }
+}

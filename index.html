@@ -38,9 +38,9 @@
         <button type="button" aria-label="Выход" class="popup__exit"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" novalidate>
-          <input autofocus autocomplete="off" id="name-input" placeholder="Имя" type="text" class="popup__input popup__input_theme_name" minlength="2" maxlength="40" required>
+          <input name="name" autofocus autocomplete="off" id="name-input" placeholder="Имя" type="text" class="popup__input popup__input_theme_name" minlength="2" maxlength="40" required>
           <span class="popup__error" id="name-input-error"></span>
-          <input autocomplete="off" id="job-input" placeholder="О себе" type="text" class="popup__input popup__input_theme_job" minlength="2" maxlength="200" required>
+          <input name="job" autocomplete="off" id="job-input" placeholder="О себе" type="text" class="popup__input popup__input_theme_job" minlength="2" maxlength="200" required>
           <span class="popup__error" id="job-input-error"></span>
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
@@ -51,9 +51,9 @@
         <button type="button" aria-label="Выход" class="popup__exit"></button>
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form" novalidate>
-          <input autocomplete="off" id="title-input" placeholder="Название" type="text" class="popup__input popup__input_theme_title" minlength="2" maxlength="30" required>
+          <input name="title" autocomplete="off" id="title-input" placeholder="Название" type="text" class="popup__input popup__input_theme_title" minlength="2" maxlength="30" required>
           <span class="popup__error" id="title-input-error"></span>
-          <input autocomplete="off" id="link-input" placeholder="Ссылка на картинку" type="url" class="popup__input popup__input_theme_link" required>
+          <input name="link" autocomplete="off" id="link-input" placeholder="Ссылка на картинку" type="url" class="popup__input popup__input_theme_link" required>
           <span class="popup__error" id="link-input-error"></span>
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
@@ -77,10 +77,15 @@
       </li>
     </template>
   </div>
-  <script type="module" src="scripts/index.js"></script>
-  <script type="module" src="scripts/Card.js"></script>
-  <script type="module" src="scripts/FormValidator.js"></script>
-  <script type="module" src="scripts/constants.js"></script>
-  <script type="module" src="scripts/utils.js"></script>
+  <script type="module" src="src/index.js"></script>
+  <script type="module" src="src/Card.js"></script>
+  <script type="module" src="src/FormValidator.js"></script>
+  <script type="module" src="src/Section.js"></script>
+  <script type="module" src="src/Popup.js"></script>
+  <script type="module" src="src/PopupWithImage.js"></script>
+  <script type="module" src="src/PopupWithForm.js"></script>
+  <script type="module" src="src/UserInfo.js"></script>
+  <script type="module" src="src/constants.js"></script>
+  <script type="module" src="src/utils.js"></script>
 </body>
 </html>

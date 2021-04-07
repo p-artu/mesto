@@ -1,9 +1,8 @@
-import {openPopup} from './index.js';
-import {popupImage} from './constants.js';
 import {getAltByLink} from './utils.js';
 export default class Card {
-  constructor(data, templateSelector) {
-    this._name = data.name;
+  constructor(data, templateSelector, {handleCardClick}) {
+    this._handleCardClick = handleCardClick;
+    this._name = data.title;
     this._link = data.link;
     this._cardTemplate = templateSelector;
   }
@@ -13,7 +12,6 @@ export default class Card {
       .content
       .querySelector('.cards-grid__item')
       .cloneNode(true);
-
     return cardElement;
   }
   createCard() {
@@ -32,19 +30,13 @@ export default class Card {
   _deleteCard(element) {
     element.remove();
   }
-  _openImagePopup(element) {
-    popupImage.querySelector('.popup__image').src = element.src;
-    popupImage.querySelector('.popup__image').alt = element.alt;
-    popupImage.querySelector('.popup__image-caption').textContent = element.closest('.cards-grid__item').querySelector('.cards-grid__title').textContent;
-    openPopup(popupImage);
-  }
   _clickCard(evt) {
     if (evt.target.classList.contains('cards-grid__icon')) {
       this._likeCard(evt.target);
     } else if (evt.target.classList.contains('cards-grid__trash')) {
       this._deleteCard(evt.target.closest('.cards-grid__item'));
     } else if (evt.target.classList.contains('cards-grid__image')) {
-      this._openImagePopup(evt.target);
+      this._handleCardClick(evt.target);
     }
   }
   _setEventListeners() {
