@@ -1,9 +1,11 @@
-import Card from './Card.js';
-import FormValidator from './FormValidator.js';
-import UserInfo from './UserInfo.js';
-import PopupWithForm from './PopupWithForm.js';
-import PopupWithImage from './PopupWithImage.js';
-import Section from './Section.js';
+import './pages/index.css';
+
+import Card from './components/Card.js';
+import FormValidator from './components/FormValidator.js';
+import UserInfo from './components/UserInfo.js';
+import PopupWithForm from './components/PopupWithForm.js';
+import PopupWithImage from './components/PopupWithImage.js';
+import Section from './components/Section.js';
 import {
   initialCards,
   settings,
@@ -15,7 +17,7 @@ import {
   jobInput,
   popupCards,
   cardsContainer
-} from './constants.js';
+} from './components/constants.js';
 
 const popupProfileValidClass = new FormValidator(settings, popupProfile);
 const popupCardsValidClass = new FormValidator(settings, popupCards);
@@ -26,7 +28,6 @@ const userInfoClass = new UserInfo({
 const popupProfileFormClass = new PopupWithForm('.popup_issue_profile', {
   handleFormSubmit: ({name, job}) => {
     userInfoClass.setUserInfo({name, job});
-    console.log(name, job);
     popupProfileFormClass.close();
   }
 });
