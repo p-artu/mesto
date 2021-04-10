@@ -30,17 +30,20 @@ const popupProfileFormClass = new PopupWithForm('.popup_issue_profile', {
     popupProfileFormClass.close();
   }
 });
+function createCard({title, link}) {
+  return new Card(
+    {title, link},
+    '#card',
+    {
+      handleCardClick: (title, link) => {
+        popupImageClass.open(title, link);
+      }
+    },
+    getAltByLink)
+}
 const popupCardsFormClass = new PopupWithForm('.popup_issue_cards', {
   handleFormSubmit: ({title, link}) => {
-    const card = new Card(
-      {title, link},
-      '#card',
-      {
-        handleCardClick: (title, link) => {
-          popupImageClass.open(title, link);
-        }
-      },
-      getAltByLink);
+    const card = createCard({title, link});
     popupCardsFormClass.close();
     defaultCardList.prependItem(card.createCard());
   }
@@ -50,12 +53,7 @@ const defaultCardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const card = new Card(item, '#card',{
-        handleCardClick: (title, link) => {
-          popupImageClass.open(title, link);
-        }
-      },
-      getAltByLink);
+      const card = createCard(item);
       defaultCardList.addItem(card.createCard());
     }
   },
