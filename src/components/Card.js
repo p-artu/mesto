@@ -1,10 +1,10 @@
-import {getAltByLink} from './utils.js';
 export default class Card {
-  constructor(data, templateSelector, {handleCardClick}) {
+  constructor(data, templateSelector, {handleCardClick}, getAltByLink) {
     this._handleCardClick = handleCardClick;
-    this._name = data.title;
+    this._title = data.title;
     this._link = data.link;
     this._cardTemplate = templateSelector;
+    this._getAltByLink = getAltByLink;
   }
   _getTemplate() {
     const cardElement = document
@@ -19,9 +19,9 @@ export default class Card {
     this._setEventListeners();
     const title = this._element.querySelector('.cards-grid__title');
     const image = this._element.querySelector('.cards-grid__image');
-    title.textContent = this._name;
+    title.textContent = this._title;
     image.src = this._link;
-    image.alt = getAltByLink(this._name, this._link);
+    image.alt = this._getAltByLink(this._title, this._link);
     return this._element
   }
   _likeCard(element) {
@@ -36,7 +36,7 @@ export default class Card {
     } else if (evt.target.classList.contains('cards-grid__trash')) {
       this._deleteCard(evt.target.closest('.cards-grid__item'));
     } else if (evt.target.classList.contains('cards-grid__image')) {
-      this._handleCardClick(evt.target);
+      this._handleCardClick(this._title, this._link);
     }
   }
   _setEventListeners() {

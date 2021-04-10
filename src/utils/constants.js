@@ -32,7 +32,6 @@ export const settings = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
 };
-export const popups = document.querySelectorAll('.popup');
 export const profileEditOpenButton = document.querySelector('.profile__edit');
 export const cardAddOpenButton = document.querySelector('.profile__add');
 export const popupProfile = document.querySelector('.popup_issue_profile');
@@ -44,4 +43,3 @@ export const formCards = popupCards.querySelector('.popup__form');
 export const titleInput = popupCards.querySelector('.popup__input_theme_title');
 export const linkInput = popupCards.querySelector('.popup__input_theme_link');
 export const cards = document.querySelector('.cards');
-export const cardsContainer = cards.querySelector('.cards-grid');
