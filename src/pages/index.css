@@ -9,6 +9,7 @@
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__avatar-edit/profile__avatar-edit.css);
 @import url(../blocks/profile/__heading/profile__heading.css);
 @import url(../blocks/profile/__title/profile__title.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
@@ -19,10 +20,13 @@
 @import url(../blocks/cards-grid/cards-grid.css);
 @import url(../blocks/cards-grid/__item/cards-grid__item.css);
 @import url(../blocks/cards-grid/__trash/cards-grid__trash.css);
+@import url(../blocks/cards-grid/__trash/_hidden/cards-grid__trash_hidden.css);
 @import url(../blocks/cards-grid/__image/cards-grid__image.css);
 @import url(../blocks/cards-grid/__info/cards-grid__info.css);
 @import url(../blocks/cards-grid/__title/cards-grid__title.css);
+@import url(../blocks/cards-grid/__like-container/cards-grid__like-container.css);
 @import url(../blocks/cards-grid/__icon/cards-grid__icon.css);
+@import url(../blocks/cards-grid/__like-sum/cards-grid__like-sum.css);
 @import url(../blocks/cards-grid/__icon/_active/cards-grid__icon_active.css);
 
 @import url(../blocks/footer/footer.css);

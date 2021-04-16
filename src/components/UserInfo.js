@@ -1,7 +1,14 @@
 export default class UserInfo {
-  constructor({nameSelector, jobSelector}) {
+  constructor({nameSelector, jobSelector, avatarSelector}) {
     this._title = document.querySelector(nameSelector);
     this._subtitle = document.querySelector(jobSelector);
+    this._avatar = document.querySelector(avatarSelector);
+  }
+  getMyId() {
+    return this._myId
+  }
+  saveMyId(num) {
+    this._myId = num;
   }
   getUserInfo() {
     return {
@@ -9,8 +16,11 @@ export default class UserInfo {
       job: this._subtitle.textContent
     }
   }
-  setUserInfo({name, job}) {
+  setAvatar({avatar}) {
+    this._avatar.style.backgroundImage = `url(${avatar})`;
+  }
+  setUserInfo({name, about}) {
     this._title.textContent = name;
-    this._subtitle.textContent = job;
+    this._subtitle.textContent = about;
   }
 }

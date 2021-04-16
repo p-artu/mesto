@@ -13,11 +13,13 @@
 
     <main class="content">
       <section class="profile">
-        <div class="profile__avatar"></div>
+        <div class="profile__avatar">
+          <button type="button" aria-label="Изменить аватар" class="profile__avatar-edit"></button>
+        </div>
         <div class="profile__heading">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <h1 class="profile__title"></h1>
           <button type="button" aria-label="Данные профиля" class="profile__edit"></button>
-          <p class="profile__subtitle">Исследователь океана</p>
+          <p class="profile__subtitle"></p>
         </div>
         <button type="button" aria-label="Добавить фото" class="profile__add"></button>
       </section>
@@ -39,8 +41,19 @@
         <form class="popup__form" novalidate>
           <input name="name" autofocus autocomplete="off" id="name-input" placeholder="Имя" type="text" class="popup__input popup__input_theme_name" minlength="2" maxlength="40" required>
           <span class="popup__error" id="name-input-error"></span>
-          <input name="job" autocomplete="off" id="job-input" placeholder="О себе" type="text" class="popup__input popup__input_theme_job" minlength="2" maxlength="200" required>
+          <input name="about" autocomplete="off" id="job-input" placeholder="О себе" type="text" class="popup__input popup__input_theme_job" minlength="2" maxlength="200" required>
           <span class="popup__error" id="job-input-error"></span>
+          <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_issue_avatar">
+      <div class="popup__container">
+        <button type="button" aria-label="Выход" class="popup__exit"></button>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <form class="popup__form" novalidate>
+          <input name="avatar" autocomplete="off" id="link-input" placeholder="Ссылка на картинку" type="url" class="popup__input popup__input_theme_link" required>
+          <span class="popup__error" id="link-input-error"></span>
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
       </div>
@@ -50,11 +63,20 @@
         <button type="button" aria-label="Выход" class="popup__exit"></button>
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form" novalidate>
-          <input name="title" autocomplete="off" id="title-input" placeholder="Название" type="text" class="popup__input popup__input_theme_title" minlength="2" maxlength="30" required>
+          <input name="name" autocomplete="off" id="title-input" placeholder="Название" type="text" class="popup__input popup__input_theme_title" minlength="2" maxlength="30" required>
           <span class="popup__error" id="title-input-error"></span>
           <input name="link" autocomplete="off" id="link-input" placeholder="Ссылка на картинку" type="url" class="popup__input popup__input_theme_link" required>
           <span class="popup__error" id="link-input-error"></span>
           <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_issue_delete">
+      <div class="popup__container">
+        <button type="button" aria-label="Выход" class="popup__exit"></button>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <form class="popup__form" novalidate>
+          <button class="popup__submit" type="submit">Да</button>
         </form>
       </div>
     </div>
@@ -71,7 +93,10 @@
         <img src="." alt="." class="cards-grid__image">
         <div class="cards-grid__info">
           <h2 class="cards-grid__title"></h2>
-          <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
+          <div class="cards-grid__like-container">
+            <button type="button" aria-label="Лайк" class="cards-grid__icon"></button>
+            <span class="cards-grid__like-sum"></span>
+          </div>
         </div>
       </li>
     </template>
