@@ -59,10 +59,10 @@ const popupProfileFormClass = new PopupWithForm('.popup_issue_profile', {
 let excessCard;
 function createCard({name, link, likes, owner, _id}) {
   const myId = userInfoClass.getMyId();
-  const card = new Card(
-    {name, link, likes, owner, _id, myId},
-    '#card',
-    {
+  const card = new Card({
+    infoData: {name, link, likes, owner, _id, myId},
+    templateSelector: '#card',
+    callbackData: {
       handleCardImageClick: (name, link) => {
         popupImageClass.open(name, link);
       },
@@ -71,12 +71,12 @@ function createCard({name, link, likes, owner, _id}) {
         popupTrashFormClass.open();
       },
       handleCardLikeClick: (element) => {
-        excessCard = card;
-        const cardId = excessCard.getCardId();
+        const cardId = card.getCardId();
         if (element.classList.contains('cards-grid__icon_active')) {
           api.cancelLike(cardId)
           .then(() => {
-            excessCard.likeCard();
+            card.likeCard();
+            card.cancelLike();
           })
           .catch(err => {
             console.log(err);
@@ -84,7 +84,8 @@ function createCard({name, link, likes, owner, _id}) {
         } else {
           api.setLike(cardId)
           .then(() => {
-            excessCard.likeCard();
+            card.likeCard();
+            card.addLike();
           })
           .catch(err => {
             console.log(err);
@@ -92,8 +93,9 @@ function createCard({name, link, likes, owner, _id}) {
         }
       }
     },
-    getAltByLink)
-    return card
+    getAltByLink
+  })
+  return card
 }
 const popupCardsFormClass = new PopupWithForm('.popup_issue_cards', {
   handleFormSubmit: ({name, link}) => {
@@ -176,18 +178,12 @@ popupTrashValidClass.enableValidation();
 popupProfileFormClass.setEventListeners();
 popupCardsFormClass.setEventListeners();
 popupAvatarFormClass.setEventListeners();
-api.getUserInfo()
-.then(result => {
-  userInfoClass.setUserInfo(result);
-  userInfoClass.setAvatar(result);
-  userInfoClass.saveMyId(result._id);
-})
-.catch(err => {
-  console.log(err);
-});
-api.getInitialCards()
-.then(result => {
-  defaultCardList.renderItems(result);
+api.getAllInfo()
+.then(([user, cards]) => {
+  userInfoClass.setUserInfo(user);
+  userInfoClass.setAvatar(user);
+  userInfoClass.saveMyId(user._id);
+  defaultCardList.renderItems(cards);
 })
 .catch(err => {
   console.log(err);
